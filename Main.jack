@@ -1,0 +1,89 @@
+class Main {
+    function void main() {
+
+        do Screen.clearScreen();
+
+        // sun
+        do Screen.drawCircle(450, 40, 15);
+
+        // top of sun line
+        do Screen.drawLine(449, 20, 449, 5);
+        do Screen.drawLine(450, 20, 450, 5);
+        do Screen.drawLine(451, 20, 451, 5);
+
+        // bottom of sun line
+        do Screen.drawLine(449, 60, 449, 75);
+        do Screen.drawLine(450, 60, 450, 75);
+        do Screen.drawLine(451, 60, 451, 75);
+
+        // left of sun line
+        do Screen.drawLine(430, 39, 415, 39);
+        do Screen.drawLine(430, 40, 415, 40);
+        do Screen.drawLine(430, 41, 415, 41);
+
+        // right of sun line
+        do Screen.drawLine(470, 39, 485, 39);
+        do Screen.drawLine(470, 40, 485, 40);
+        do Screen.drawLine(470, 41, 485, 41);
+
+        // clouds
+        do Main.drawCloud(90, 45);
+        do Main.drawCloud(220, 65);
+        do Main.drawCloud(320, 40);
+
+        // building
+        do Main.drawBuilding(330, 120, 380, 230);
+        do Main.drawBuilding(400, 100, 460, 230);
+        do Main.drawBuilding(470, 80, 511, 230);
+
+        // trees
+        do Main.drawTree(40, 190);
+        do Main.drawTree(90, 190);
+        do Main.drawTree(140, 190);
+
+        // road
+        do Screen.drawRectangle(0, 230, 511, 245);
+
+        // car
+        do Main.drawCar(230, 214);
+        do Main.honk();
+
+        return;
+    }
+
+    function void drawTree(int x, int y) {
+        do Screen.drawRectangle(x, y, x + 6, y + 40);
+
+        do Screen.drawCircle(x + 3, y - 10, 8);
+        do Screen.drawCircle(x - 4, y - 5, 7);
+        do Screen.drawCircle(x + 10, y - 5, 7);
+        return;
+    }
+
+    function void drawCar(int x, int y) {
+        do Screen.drawRectangle(x, y - 10, x + 40, y + 10);
+
+        do Screen.drawCircle(x + 10, y + 12, 4);
+        do Screen.drawCircle(x + 30, y + 12, 4);
+        return;
+    }
+
+    function void drawCloud(int x, int y) {
+        do Screen.drawCircle(x, y, 8);
+        do Screen.drawCircle(x + 10, y - 4, 9);
+        do Screen.drawCircle(x + 20, y, 8);
+        do Screen.drawCircle(x + 10, y + 4, 7);
+        return;
+    }
+
+    function void drawBuilding(int x1, int y1, int x2, int y2) {
+        do Screen.drawRectangle(x1, y1, x2, y2);
+        return;
+    }
+
+    function void honk() {
+        do Output.moveCursor(18, 23);
+        do Output.printString("HONK");
+        return;
+    }
+}
